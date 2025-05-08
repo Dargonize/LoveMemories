@@ -33,10 +33,10 @@ O LoveMemories foi projetado com foco total na privacidade. Cada casal tem seu p
 ## 📱 Capturas de Tela
 
 ### Página de Login
-![Página de Login](<img src="imagens/login.jpg">)
+![Página de Login](imagens/login.jpg)
 
 ### Dashboard Principal
-![Dashboard](<img src="imagens/poslogin.jpg">)
+![Dashboard](imagens/poslogin.jpg)
 
 ## 📋 Funcionalidades Planejadas
 
