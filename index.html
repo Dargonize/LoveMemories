@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoveMemories - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-header">
+            <h1><i class="fas fa-heart"></i> LoveMemories</h1>
+            <p>Eternizando momentos de amor</p>
+        </div>
+        
+        <div class="login-form">
+            <form id="loginForm" onsubmit="validateLogin(event)">
+                <div class="form-group">
+                    <label for="username">Nome de usuário</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="toggle-password" onclick="togglePassword()">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+                
+                <div class="form-group remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Lembrar de mim</label>
+                </div>
+                
+                <button type="submit" class="btn-login">Entrar</button>
+                
+                <div class="login-options">
+                    <a href="#" onclick="showResetPassword()">Esqueceu a senha?</a>
+                    <a href="#" onclick="showRegister()">Criar nova conta</a>
+                </div>
+            </form>
+        </div>
+        
+        <div class="login-footer">
+            <p>Conecte-se e guarde suas memórias mais preciosas</p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Crie sua conta no LoveMemories</h2>
+            
+            <form id="registerForm" onsubmit="validateRegister(event)">
+                <div class="form-group">
+                    <label for="reg-name1">Seu nome</label>
+                    <input type="text" id="reg-name1" name="reg-name1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-name2">Nome do(a) parceiro(a)</label>
+                    <input type="text" id="reg-name2" name="reg-name2" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" name="reg-email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-password">Senha</label>
+                    <input type="password" id="reg-password" name="reg-password" 
+                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
+                           title="A senha deve conter pelo menos 8 caracteres, incluindo maiúsculas, minúsculas, números e caracteres especiais" 
+                           required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-confirm-password">Confirmar senha</label>
+                    <input type="password" id="reg-confirm-password" name="reg-confirm-password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="anniversary">Data do aniversário do relacionamento (opcional)</label>
+                    <input type="date" id="anniversary" name="anniversary">
+                </div>
+                
+                <button type="submit" class="btn-register">Criar conta</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Redefinição de Senha -->
+    <div id="resetModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('resetModal')">&times;</span>
+            <h2>Redefinir senha</h2>
+            
+            <form id="resetForm" onsubmit="validateReset(event)">
+                <div class="form-group">
+                    <label for="reset-email">Email da conta</label>
+                    <input type="email" id="reset-email" name="reset-email" required>
+                </div>
+                
+                <button type="submit" class="btn-reset">Enviar link de redefinição</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
